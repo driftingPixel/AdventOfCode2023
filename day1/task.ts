@@ -8,6 +8,11 @@ const readFile = (fileName) => {
     }
 }
 
+/** First task 
+ * Get numbers from string (task-inputData.txt) and for each line create a number from first and last digit.
+ * On the end sum all lines.
+*/
+
 const isLetter = (char) => {
     return char.toUpperCase() != char.toLowerCase() || char.codePointAt(0) > 127;
 }
@@ -20,6 +25,10 @@ const solutionTask1 = (filename) => {
         .reduce( (accumulator, currentValue) => accumulator + currentValue, 0);
 }
 
+/** Second task 
+ * Extends task 1. Additional if numbers are as string (one, two ...), you should use it as a digits.
+ * Rules of creating numbers from line are the same :).
+*/
 const digits = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
 
 const insertSubStringAtPosition = (text, substring, position) => {

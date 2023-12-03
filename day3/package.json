@@ -1,0 +1,13 @@
+{
+  "name": "day3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "compile": "tsc task.ts",
+    "start": "yarn compile  && node task.js"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.2"
+  }
+}

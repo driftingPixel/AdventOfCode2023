@@ -1,17 +1,9 @@
-const fs = require('node:fs');
-
-const readFile = (fileName) => {
-    try {
-        return fs.readFileSync(fileName, 'utf8')
-    } catch (err) {
-        console.error(err);
-    }
-}
-
 /** First task 
  * Get numbers from string (task-inputData.txt) and for each line create a number from first and last digit.
  * On the end sum all lines.
 */
+
+import { readFile } from "../utility/utility";
 
 const isLetter = (char) => {
     return char.toUpperCase() != char.toLowerCase() || char.codePointAt(0) > 127;
@@ -39,7 +31,7 @@ const addStringNumbersAsDigit = (text) => {
 
     let textLowerCase = text.toLowerCase();
 
-    const findings = [];
+    const findings = [] as {position: number, number: number}[];
     for(let index = 0; index< digits.length; index++) {
         let lastPosition = textLowerCase.indexOf(digits[index]);
     
@@ -65,10 +57,10 @@ const solutionTask2 = (filename) => {
         .map(el => addStringNumbersAsDigit(el))
         .map(el => el.split('').filter(letterOrNumber => !isLetter(letterOrNumber)))
         .map(el => parseInt(el[0] + el[el.length - 1]))
-        .reduce( (accumulator, currentValue, index) => accumulator + currentValue, 0);
+        .reduce( (accumulator, currentValue) => accumulator + currentValue, 0);
 }
 
 const result = solutionTask1("task-inputData.txt");
 const result2 = solutionTask2("task-inputData.txt");
-console.log(result);
-console.log(result2);
+console.log(`Task1: ${result}`);
+console.log(`Task1: ${result2}`);

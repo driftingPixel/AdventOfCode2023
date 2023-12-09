@@ -33,8 +33,7 @@ const solutionTask1 = (filename) => {
         const nextPointIndex = currentPoint.roads[instruction[counter % instruction.length]];
         currentPoint =  road[nextPointIndex];
         counter++;
-        console.log(counter)
-        ;
+        console.log(counter);
     }
 
     return counter;

@@ -131,3 +131,4 @@ dist
 
 #ignore js files
 *.js
+*.class
